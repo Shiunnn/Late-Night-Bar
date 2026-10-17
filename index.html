@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <meta name="description" content="Late Night Bar (深夜調酒館) - 專為不知道喝什麼或突然想調酒沒靈感的你設計。精選 104 款經典與現代調酒，提供「想放鬆、想慶祝、想喝醉、睡前微醺」四種目的導向推薦、動態毫升數試算與 Web Audio 沉浸音效。">
+  <meta name="keywords" content="Late Night Bar, 調酒, 雞尾酒, 酒譜, 想放鬆, 想慶祝, 想喝醉, 睡前微醺, 104款調酒, IBA調酒, 深夜酒吧">
+  <meta property="og:title" content="Late Night Bar | 深夜調酒指南 ‧ 不知喝什麼的靈感解方">
+  <meta property="og:description" content="不知道喝什麼？突然想在家調一杯？精選 104 款調酒，四種目的導向篩選，動態換算毫升數與沉浸音效。">
+  <meta property="og:type" content="website">
+
+  <title>Late Night Bar | 深夜調酒指南 ‧ 不知喝什麼的靈感解方</title>
+
+  <!-- Google Fonts: Playfair Display (Serif Elegance) & Outfit (Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Ambient Glow Orbs -->
+  <div class="ambient-scene" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Site Navigation & Top Bar -->
+    <header class="site-header" role="banner">
+      <a href="#top" class="brand-wrapper" id="brandHomeLink" aria-label="回到首頁">
+        <div class="brand-icon" aria-hidden="true">🍸</div>
+        <div class="brand-text">
+          <h1>Late Night Bar</h1>
+          <span>深夜調酒指南 ‧ 靈感解方</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Sound Effect Toggle Button -->
+        <button id="soundToggleBtn" class="icon-button sound-toggle" title="切換沉浸氛圍音效" aria-label="切換沉浸氛圍音效">
+          <div class="sound-wave" aria-hidden="true">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </div>
+        </button>
+
+        <!-- Personal Cabinet Toggle Button -->
+        <button id="cabinetToggleBtn" class="icon-button" title="檢視個人收藏酒櫃" aria-label="檢視個人收藏酒櫃">
+          <span>❤️ 我的酒櫃</span>
+          <span class="cabinet-badge" id="cabinetCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main role="main">
+      <!-- Hero Lounge Banner -->
+      <section class="hero-section" id="top">
+        <div class="hero-tag">✦ MIDNIGHT COCKTAIL FINDER ✦</div>
+        <h2 class="hero-title">
+          今晚不知道喝什麼？<br>
+          為此刻的心情找一杯 <span class="glow-purple">命定</span><span class="glow-amber">特調</span>
+        </h2>
+        <p class="hero-desc">
+          突然想在家調一杯卻毫無靈感？精選 104 款國際 IBA 官方與世界名品調酒。四種明確目的導向——想放鬆、想慶祝、想喝醉、睡前微醺，一鍵精準找到今夜那一杯！
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" id="heroSurpriseBtn" aria-label="Bartender 隨機命定抽卡">
+            <span>🎲 Bartender 命定抽卡</span>
+          </button>
+          <a href="#cocktailsAnchor" class="btn-secondary" style="text-decoration:none;">
+            <span>🥃 探索全部 104 款酒譜</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Purposeful Goal-Driven Filter Tabs (4明確目的性) -->
+      <section class="mood-section" aria-label="目的導向推薦篩選">
+        <div class="section-label">
+          <span>GOAL SELECTOR</span>
+          <span>✦ 選擇今晚的調酒目的</span>
+        </div>
+        <div class="mood-tabs" role="tablist">
+          <button class="mood-btn active" data-mood="all" role="tab" aria-selected="true">
+            <span class="mood-icon">✨</span>
+            <span>全部特調 (104款)</span>
+          </button>
+          <button class="mood-btn" data-mood="relax" role="tab" aria-selected="false">
+            <span class="mood-icon">🌊</span>
+            <span>想放鬆 (Relax)</span>
+          </button>
+          <button class="mood-btn" data-mood="celebrate" role="tab" aria-selected="false">
+            <span class="mood-icon">🎉</span>
+            <span>想慶祝 (Celebrate)</span>
+          </button>
+          <button class="mood-btn" data-mood="drunk" role="tab" aria-selected="false">
+            <span class="mood-icon">⚡</span>
+            <span>想喝醉 (Get Drunk)</span>
+          </button>
+          <button class="mood-btn" data-mood="nightcap" role="tab" aria-selected="false">
+            <span class="mood-icon">🌙</span>
+            <span>睡前微醺 (Nightcap)</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Search & Material (Ingredient) Selector Panel -->
+      <section class="filter-panel" id="cocktailsAnchor" aria-label="材料篩選與搜尋面板">
+        <!-- Search Bar -->
+        <div class="search-and-controls">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="搜尋調酒名稱、材料 (如 琴酒, 威士忌, 薄荷, 可樂, 咖啡, 柳橙)..." 
+              aria-label="搜尋調酒名稱或材料"
+            >
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="清除搜尋關鍵字">✕</button>
+          </div>
+        </div>
+
+        <!-- Ingredients Filter Selector -->
+        <div class="ingredients-selector">
+          <!-- Spirit Base -->
+          <div class="material-group">
+            <span class="material-title">現有基酒:</span>
+            <div class="chip-list">
+              <span class="chip" data-ing="vodka">伏特加 Vodka</span>
+              <span class="chip" data-ing="gin">琴酒 Gin</span>
+              <span class="chip" data-ing="whisky">威士忌 Whisky</span>
+              <span class="chip" data-ing="rum">蘭姆酒 Rum</span>
+              <span class="chip" data-ing="tequila">龍舌蘭 Tequila</span>
+              <span class="chip" data-ing="brandy">白蘭地 Brandy</span>
+              <span class="chip" data-ing="liqueur">香甜利口酒 Liqueur</span>
+            </div>
+          </div>
+
+          <!-- Mixers -->
+          <div class="material-group">
+            <span class="material-title">軟飲/副料:</span>
+            <div class="chip-list">
+              <span class="chip" data-ing="tonic">通寧水 Tonic</span>
+              <span class="chip" data-ing="soda">氣泡水 Soda</span>
+              <span class="chip" data-ing="cola">可樂 Cola</span>
+              <span class="chip" data-ing="lemon">檸檬/萊姆汁 Lemon</span>
+              <span class="chip" data-ing="coffee">咖啡/牛奶 Coffee/Milk</span>
+              <span class="chip" data-ing="juice">果汁 Juice</span>
+            </div>
+            <button class="chip-reset" id="chipResetBtn">重設材料篩選</button>
+          </div>
+        </div>
+
+        <!-- Filter Status Bar -->
+        <div class="filter-meta">
+          <div>
+            已為您找到 <span class="filter-match-count" id="matchCount">104</span> 款調酒酒譜
+          </div>
+          <div>
+            <button class="icon-button" id="surpriseDrawBtn" style="font-size: 0.8rem; padding: 0.35rem 0.85rem;">
+              🎲 抽取命定特調卡
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cocktail Recipe Cards Grid -->
+      <section class="recipes-grid" id="recipesGrid" aria-label="雞尾酒譜清單" aria-live="polite">
+        <!-- Rendered dynamically by app.js -->
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <p class="footer-quote">
+        「不知道喝什麼的時候，就讓杯中的冰塊替你做決定。一杯給過往，一杯敬當下。」
+      </p>
+      <p>© 2026 Late Night Bar • 深夜調酒指南 • Crafted with Glassmorphism & Web Audio</p>
+      <p class="safety-notice">提醒您：未滿 18 歲請勿飲酒 • 禁止酒後駕車 • 理性飲酒享受微醺生活</p>
+    </footer>
+  </div>
+
+  <!-- ======================================================================
+       Modals
+       ====================================================================== -->
+
+  <!-- 1. Recipe Detail Modal -->
+  <div class="modal-overlay" id="recipeDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalDetailTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn modal-close-trigger" aria-label="關閉詳細視窗">✕</button>
+      <div id="modalDynamicContent">
+        <!-- Dynamically injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Surprise Lounge (Bartender 隨機特調 3D 抽卡) -->
+  <div class="modal-overlay" id="surpriseModal" role="dialog" aria-modal="true" aria-labelledby="surpriseTitle">
+    <div class="modal-container" style="max-width: 480px; text-align: center;">
+      <button class="modal-close-btn modal-close-trigger" aria-label="關閉抽卡視窗">✕</button>
+
+      <div style="margin-bottom: 0.5rem;">
+        <span class="hero-tag" style="margin-bottom: 0.4rem;">✦ BARTENDER'S CHOICE ✦</span>
+        <h2 id="surpriseTitle" style="font-family: var(--font-serif); font-size: 1.5rem; color: #fff;">
+          深夜命定抽卡
+        </h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          毫無頭緒嗎？點擊牌面翻轉，讓調酒師替今夜的你做個選擇
+        </p>
+      </div>
+
+      <!-- 3D Flip Card Viewport -->
+      <div class="surprise-card-viewport">
+        <div class="card-3d-flipper" id="flipperCard" title="點擊翻開特調卡片">
+          <!-- Card Front: Mysterious Tarot Glow -->
+          <div class="card-face card-front">
+            <div class="tarot-decor">✨</div>
+            <div class="tarot-title">BARTENDER SECRET</div>
+            <p class="tarot-instruction">【 點 擊 揭 曉 命 定 特 調 】</p>
+            <div style="font-size: 0.75rem; color: var(--text-subtle); margin-top: 1.25rem;">
+              ✦ LATE NIGHT BAR ✦
+            </div>
+          </div>
+
+          <!-- Card Back: Revealed Cocktail & Midnight Quote -->
+          <div class="card-face card-back" id="flipperBackContent">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- 1. Database of 104 Cocktails -->
+  <script src="assets/js/recipes.js"></script>
+
+  <!-- 2. Core Application Logic -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
